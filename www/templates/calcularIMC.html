@@ -1,0 +1,82 @@
+<ion-view title="Calcular IMC" id="page2" class=" ">
+    <ion-content padding="true" class="has-header">
+        <form name="imcForm" class="list" novalidate="" ng-submit="calcIMC(imcForm, imc)">
+            <label class="item item-input" ng-class="{ 'has-errors' : hasError(imcForm, imcForm.peso), 'no-errors' : notHasError(imcForm, imcForm.peso)}">
+                <span class="input-label">Kg</span>
+                <input placeholder="Peso em kg" ng-model="imc.peso" required name="peso" type="number" ui-peso>
+            </label>
+            <div class="error-container" ng-show="hasError(imcForm, imcForm.peso)">
+                <div class="error">
+                    <i class="ion-information-circled"></i>
+                    Campo obrigatório!
+                </div>
+            </div>
+
+            <label class="item item-input" ng-class="{ 'has-errors' : hasError(imcForm, imcForm.altura), 'no-errors' : notHasError(imcForm, imcForm.altura)}">
+                <span class="input-label">m</span>
+                <input placeholder="Altura em metros" ng-model="imc.altura" required name="altura" type="number" ui-altura>
+            </label>
+            <div class="error-container" ng-show="hasError(imcForm, imcForm.altura)">
+              <div class="error">
+                    <i class="ion-information-circled"></i>
+                    Campo obrigatório!
+                </div>
+            </div>
+            <button id="calcularIMC-button1" class=" button button-positive  button-block icon-left ion-calculator " type="submit">Calcular IMC
+        </button>
+
+        </form>
+        <form class="list">
+            <label>
+                Resultado:
+                <span style="font-weight: bold" ng-bind="resultIMC"></span>
+            </label>
+        </form>
+        <div ng-if="msgResultIMC">
+             <hr>
+            <div class="jumbotron">
+                <h3 ng-bind="msgResultIMC" align="center"></h3>
+            </div>
+        </div>
+        <div>
+            <table style="width: 100%; border: 0; border-spacing: 0">
+                <thead style="background-color: #ddd; font-weight: bold;">
+                    <tr>
+                        <td>Resultado</td>
+                        <td>Situação</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Abaixo de 17</td>
+                        <td>Muito abaixo do peso </td>
+                    </tr>
+                    <tr>
+                        <td>Entre 17 e 18,49</td>
+                        <td>Abaixo do peso</td>
+                    </tr>
+                    <tr>
+                        <td>Entre 18,5 e 24,99</td>
+                        <td>Peso normal</td>
+                    </tr>
+                    <tr>
+                        <td>Entre 25 e 29,99</td>
+                        <td>Acima do peso</td>
+                    </tr>
+                    <tr>
+                        <td>Entre 30 e 34,99</td>
+                        <td>Obesidade I</td>
+                    </tr>
+                    <tr>
+                        <td>Entre 35 e 39,99</td>
+                        <td>Obesidade II (severa)</td>
+                    </tr>
+                    <tr>
+                        <td>Acima de 40</td>
+                        <td>Obesidade III (mórbida)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </ion-content>
+</ion-view>
