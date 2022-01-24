@@ -1,3 +1,3 @@
 # CalcIMC
 
-An Ionic project
+An Ionic project to IMC calculate
