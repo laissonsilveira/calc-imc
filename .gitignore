@@ -1,11 +1,8 @@
-# Specifies intentionally untracked files to ignore when using Git
-# http://git-scm.com/docs/gitignore
-
 node_modules/
 platforms/
 plugins/
-.idea/
-*.DS_Store
+.idea
+.DS_Store
 .AppleDouble
 .LSOverride
 Icon
@@ -22,3 +19,4 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+.history

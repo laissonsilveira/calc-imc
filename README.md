@@ -1,0 +1,3 @@
+# CalcIMC
+
+An Ionic project
